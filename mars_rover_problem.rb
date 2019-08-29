@@ -47,8 +47,7 @@ class Rover
     @x_axis = @x_axis.to_i
     @y_axis = @y_axis.to_i
     @plateau = plateau
-    raise 'Grid Limit Excedded in initialize' if @x_axis > @plateau.width ||
-                                                 @y_axis > @plateau.height
+    raise 'Grid Limit Excedded in initialize' unless in_bounds?
   end
 
   def turn_left
